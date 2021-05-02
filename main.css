@@ -63,6 +63,26 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  -webkit-animation: bgfade 1s ease-in-out;
+          animation: bgfade 1s ease-in-out;
+}
+
+@-webkit-keyframes bgfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bgfade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .slider .bg {
@@ -72,20 +92,24 @@ header {
 .slider .cellphone {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -100%;
   width: 31%;
-  -webkit-animation: fromBottom 1s ease-in-out;
-          animation: fromBottom 1s ease-in-out;
+  -webkit-animation: fromBottom 2s ease-in-out;
+          animation: fromBottom 2s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes fromBottom {
   from {
     -webkit-transform: translateY(100%) rotate(-65deg);
             transform: translateY(100%) rotate(-65deg);
+    bottom: -100%;
   }
   to {
     -webkit-transform: translateY(0rem) rotate(0deg);
             transform: translateY(0rem) rotate(0deg);
+    bottom: 0;
   }
 }
 
@@ -93,10 +117,12 @@ header {
   from {
     -webkit-transform: translateY(100%) rotate(-65deg);
             transform: translateY(100%) rotate(-65deg);
+    bottom: -100%;
   }
   to {
     -webkit-transform: translateY(0rem) rotate(0deg);
             transform: translateY(0rem) rotate(0deg);
+    bottom: 0;
   }
 }
 
@@ -117,6 +143,42 @@ header {
   position: absolute;
   top: 10rem;
   left: 10rem;
+  -webkit-animation: fromleft 1s ease-in-out;
+          animation: fromleft 1s ease-in-out;
+}
+
+@-webkit-keyframes fromleft {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
+@keyframes fromleft {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .slider .tag {
+    width: 40rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .slider .tag {
+    width: 30rem;
+  }
 }
 
 .ornament2 {
